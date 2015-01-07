@@ -1,0 +1,2 @@
+# openacademy
+Odoo Training Module
