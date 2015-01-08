@@ -26,11 +26,11 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'templates.xml',
+        #'templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo.xml',
+        #'demo.xml',
     ],
     'installable': True,
     'auto_install': False,
