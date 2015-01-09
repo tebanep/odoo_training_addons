@@ -9,8 +9,12 @@
             <field name="arch" type="xml">
                 <form string="Session Form">
                     <sheet>
-                        <group>
+                        <group string="General">
+                            <field name="course_id"/>
                             <field name="name"/>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group string="Schedule">
                             <field name="start_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
