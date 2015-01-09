@@ -12,7 +12,7 @@
                         <group>
                             <field name="name"/>
                             <field name="start_date"/>
-                            <fiedl name="duration"/>
+                            <field name="duration"/>
                             <field name="seats"/>
                         </group>
                     </sheet>
