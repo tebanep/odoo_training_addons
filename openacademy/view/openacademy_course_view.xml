@@ -22,7 +22,7 @@
                                 <field name="session_ids">
                                     <tree string="Registered sessions" editable="bottom">
                                         <field name="name"/>
-                                        <field name="instruction_id"/>
+                                        <field name="instructor_id"/>
                                     </tree>
                                 </field>
                             </page>
