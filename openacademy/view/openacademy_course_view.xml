@@ -50,6 +50,8 @@
                 <search>
                     <field name="name"/>
                     <field name="description"/>
+
+
                 </search>
             </field>
         </record>
