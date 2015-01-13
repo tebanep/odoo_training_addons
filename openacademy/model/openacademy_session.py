@@ -26,6 +26,18 @@ class Session(models.Model):
     attendee_ids = fields.Many2many('res.partner', string="Attendees")
     taken_seats = fields.Float(string="Taken seats", compute='_taken_seats')
 
+    hours = fields.Float(string="Duration in hours",
+                         compute='_get_hours', inverse='_set_hours')
+
+    @api.one
+    @api.depends('duration')
+    def _get_hours(self):
+        self.hours = self.duration * 24.0
+
+    @api.one
+    def _set_hours(self):
+        self.duration = self.hours / 24.0
+
     @api.one
     @api.depends('seats', 'attendee_ids')
     def _taken_seats(self):
