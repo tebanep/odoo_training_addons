@@ -32,6 +32,22 @@ class Session(models.Model):
     attendees_count = fields.Integer(string="Attendees count",
                                      compute='_get_attendees_count', store=True)
     color = fields.Integer()
+    state = fields.Selection([('draft', "Draft"),
+                              ('confirmed', "Confirmed"),
+                              ('done', "Done")],
+                             default="draft")
+
+    @api.one
+    def action_draft(self):
+        self.state = 'draft'
+
+    @api.one
+    def action_confirm(self):
+        self.state = 'confirmed'
+
+    @api.one
+    def action_done(self):
+        self.state = 'done'
 
     @api.one
     @api.depends('duration')
@@ -76,7 +92,7 @@ class Session(models.Model):
     @api.one
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
-        if not(self.start_date and self.duration):
+        if not (self.start_date and self.duration):
             self.end_date = self.start_date
             return
 
